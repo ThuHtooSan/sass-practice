@@ -1,0 +1,56 @@
+/* Variables */
+:root {
+  --grey: rgba(53, 47, 68, .4);
+  --dark-grey: rgba(0, 0, 0, 0.6);
+  --white: rgba(255, 255, 255, 1);
+  --white-alpha: rgba(255, 255, 255, .7);
+  --yellow: rgb(251, 240, 178);
+  --pink: rgb(255, 199, 234);
+  --purple: rgb(216, 180, 248);
+  --blue: rgb(202, 237, 255);
+  --dark-navy: rgb(64, 66, 88);
+  --navy: rgb(71, 78, 104);
+  --light-navy: rgb(80, 87, 122);
+  --lighter-navy: rgb(107, 114, 142);
+  --bl-font: rgba(0, 0, 0, 0.8);
+  --grey-font: rgba(0, 0, 0, 0.5);
+  --wh-font: rgba(255, 255, 255, 1);
+  --transition: .3s;
+  --box-shadow: 0 0 7px rgba(107, 114, 142, .3);
+  --margin: 20px;
+  --border-radius: 12px;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:not(i) {
+  font-family: "Gabarito", sans-serif;
+}
+
+/* Common Styles */
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Event Delegation Fix */
+button > * {
+  pointer-events: none;
+}
+
+button, input {
+  transition: var(--transition);
+}
