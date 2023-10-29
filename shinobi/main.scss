@@ -1,13 +1,11 @@
-// Variables and functions
-@use 'variables';
-
 // Base and layout
 @use 'base';
 
 // Colors
-
+@use 'colors';
 
 // Components
-@use 'components/card' as card;
+@use 'components/card';
+@use 'components/button';
 
 // Utilities
