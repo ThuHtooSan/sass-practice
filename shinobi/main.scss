@@ -1,5 +1,6 @@
 // Base and layout
 @use 'base';
+@use 'grid';
 
 // Colors
 @use 'colors';
@@ -7,5 +8,7 @@
 // Components
 @use 'components/card';
 @use 'components/button';
+@use 'components/navbar';
 
 // Utilities
+@use 'utilities';
