@@ -1,6 +1,4 @@
 @use 'sass:math';
-@use 'variables' as *;
-@use 'shorthands' as sh;
 
 $sides: 'all', 'top', 'right', 'bottom', 'left';
 $values: (
@@ -56,18 +54,16 @@ $values: (
     )
 );
 
-
-
 // generate utilities map
-@each $style, $prop in $values {
-    $s: map-get(sh.$shorthands, $style) or $style;
+@each $style, $map in $values {
+    $short-style: shorthand-of($style);
 
     @if ($style == 'margin' or $style == 'padding') {
         @each $side in $sides { 
-            $si: map-get(sh.$shorthands, $side) or '';
+            $short-side: shorthand-of($side);
     
-            @each $key, $value in $prop {
-                .#{$s}#{$si}-#{$key} {
+            @each $key, $value in $map {
+                .#{$short-style}#{$short-side}-#{$key} {
                     @if ($side == 'all') {
                         #{$style}: $value;
                     } @else {
@@ -77,11 +73,11 @@ $values: (
             }
         }
     } @else {
-        @each $key, $value in $prop {
+        @each $key, $value in $map {
             @if ($key == 'default') {
-                .#{$s} { #{$style}: $value }
+                .#{$short-style} { #{$style}: $value }
             } @else {
-                .#{$s}-#{$key} { #{$style}: $value }
+                .#{$short-style}-#{$key} { #{$style}: $value }
             }
         }
     }

@@ -1,7 +1,4 @@
 @use 'sass:math';
-@use 'variables' as *;
-@use 'breakpoints' as bp;
-@use 'shorthands' as sh;
 
 $grid-columns: 12;
 $grid-gaps: (
@@ -12,8 +9,9 @@ $grid-gaps: (
     '4': $base-gap * 4
 );
 
-$justify-content-values: flex-start, flex-end, center, space-around, space-between, stretch;
-$align-items-values: flex-start, flex-end, center, baseline, center, normal, stretch;
+// alignments
+$justify-content-values: flex-start, flex-end, center, space-around, space-between;
+$align-items-values: flex-start, flex-end, center, baseline, normal, stretch;
 
 $alignments: (
     'justify-content': $justify-content-values,
@@ -32,8 +30,6 @@ $alignments: (
     padding: 0 20px;
 } 
 
-
-
 .row {
     display: flex;
     flex-flow: row wrap;
@@ -41,17 +37,23 @@ $alignments: (
 
 // gap classes
 @each $key, $val in $grid-gaps {
-    .gap-#{$key} {
-        gap: $val;
+    $short-gap: shorthand-of(gap);
+
+    .#{$short-gap}-#{$key} > * {
+        padding: $val;
+    }
+
+    .#{$short-gap}-#{$key} {
+        margin-inline: -$val;
     }
 }
 
 // alignment classes
 @each $key, $list in $alignments {
-    $short-key: map-get(sh.$shorthands, $key) or $key;
+    $short-key: shorthand-of($key);
 
     @each $val in $list {
-        $short-val: map-get(sh.$shorthands, $val) or $val;
+        $short-val: shorthand-of($val);
 
         .#{$short-key}-#{$short-val} {
             #{$key}: $val;
@@ -60,7 +62,7 @@ $alignments: (
 }
 
 // col classes
-@each $key, $val in bp.$breakpoints {
+@each $key, $val in $breakpoints {
     @media (min-width: $val) {
         @for $i from 1 through $grid-columns {
             .col-#{$key}-#{$i} {

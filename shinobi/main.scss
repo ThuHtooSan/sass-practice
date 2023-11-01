@@ -1,14 +1,25 @@
+// Variables & Functions
+@import 'variables';
+@import 'functions';
+
+// Shorthands
+@import 'shorthands';
+
+// Breakpoints
+@import 'breakpoints';
+
 // Base and layout
-@use 'base';
-@use 'grid';
+@import 'base';
+@import 'grid';
 
 // Colors
-@use 'colors';
+@import 'colors';
 
 // Components
-@use 'components/card';
-@use 'components/button';
-@use 'components/navbar';
+@import 'components/card';
+@import 'components/button';
+@import 'components/navbar';
+@import 'components/badge';
 
 // Utilities
-@use 'utilities';
+@import 'utilities';

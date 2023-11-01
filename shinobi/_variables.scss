@@ -1,8 +1,8 @@
 // Theme Colors
-$primary: #326dee;
-$secondary: #1ac886;
-$error: #d32752;
-$info: #f6c31c;
+$primary: #326dee !default;
+$secondary: #1ac886 !default;
+$error: #d32752 !default;
+$info: #f6c31c !default;
 
 // Color Palette
 $colors: (
@@ -19,36 +19,33 @@ $colors: (
     'gray': #808080,
     'black': black,
     'white': white
-);
+) !default;
 
 // Button
-$base-btn-color: #e2e2e2;
+$base-btn-color: #e2e2e2 !default;
+
+$base-transition-duration: .3s !default;
 
 // Transition
-$base-transition-duration: .3s;
+@media (prefers-reduced-motion) {
+    $base-transition-duration: 0s;
+}
 
 // Spacing
-$base-padding: 0.75rem;
-$base-margin: 0.75rem;
-$base-gap: 10px;
+$base-padding: 0.75rem !default;
+$base-margin: 0.75rem !default;
+$base-gap: 10px !default;
 
 // Borders
-$base-border-thickness: 1px;
-$base-border-radius: 20px;
+$base-border-thickness: 1px !default;
+$base-border-radius: 20px !default;
 
 // Box Shadow
-$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, .1);
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, .1) !default;
 
 // Font Sizes
-$base-font-size: 1rem;
-$font-size-sm: $base-font-size * .75;
-$font-size-lg: $base-font-size * 1.5;
-$font-size-xl: $base-font-size * 2;
-$font-size-xxl: $base-font-size * 3;
-
-$bases: (
-    'margin': $base-margin,
-    'padding': $base-padding,
-    'border-width': $base-border-thickness,
-    'border-radius': $base-border-radius
-);
+$base-font-size: 1rem !default;
+$font-size-sm: $base-font-size * .75 !default;
+$font-size-lg: $base-font-size * 1.5 !default;
+$font-size-xl: $base-font-size * 2 !default;
+$font-size-xxl: $base-font-size * 3 !default;

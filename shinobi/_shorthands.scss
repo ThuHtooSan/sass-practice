@@ -8,6 +8,7 @@ $shorthands: (
     'right': 'r',
     'top': 't',
     'bottom': 'b',
+    'all': '',
     'justify-content': 'justify',
     'align-items': 'align',
     'flex-start': 'start',
@@ -15,3 +16,7 @@ $shorthands: (
     'space-around': 'around',
     'space-between': 'between'
 );
+
+@function shorthand-of($long) {
+    @return map-get($shorthands, $long) or $long;
+}

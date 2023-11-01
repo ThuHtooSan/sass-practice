@@ -1,6 +1,3 @@
-@use '../variables' as *;
-@use '../functions' as *;
-
 @mixin btn ($bg-color: $base-btn-color, $border-color: none) {
     text-decoration: none;
     cursor: pointer;

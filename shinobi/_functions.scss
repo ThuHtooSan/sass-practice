@@ -1,5 +1,3 @@
-@use 'variables' as *;
-
 @function light-comp($color) {
     $complement-color: complement($color);
     $lighten-complement: lighten($complement-color, 30%);

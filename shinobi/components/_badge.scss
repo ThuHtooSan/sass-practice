@@ -1,0 +1,18 @@
+@use 'sass:math';
+
+.badge {
+    display: inline-block;
+    padding: math.div($base-padding, 4) math.div($base-padding, 2);
+    border-radius: $base-border-radius * 4;
+    background-color: $info;
+    font-size: $font-size-sm;
+    font-weight: normal;
+}
+
+@each $key, $val in $colors {
+    .badge-#{$key} {
+        @extend .badge;
+        background-color: $val;
+    }
+}
+
